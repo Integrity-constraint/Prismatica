@@ -16,6 +16,10 @@ public abstract class Interactble : MonoBehaviour
    
     public void BaseInteract()
     {
+        if (useEvents) { 
+
+            GetComponent<InteractionEvent>().Oninteract.Invoke();
+        }
         Interact();
     }
     protected virtual void Interact()
